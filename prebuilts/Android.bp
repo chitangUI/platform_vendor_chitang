@@ -1,3 +1,17 @@
+// Sensitive Phone Numbers schema
+// =============================================================
+filegroup {
+    name: "spn-schema",
+    srcs: ["lib/SpnInfo.xsd"],
+}
+
+xsd_config {
+    name: "spn-info",
+    srcs: [":spn-schema"],
+    api_dir: "lib/schema",
+    package_name: "org.lineageos.lib.phone.spn",
+}
+
 prebuilt_etc_xml {
     name: "sensitive_pn.xml",
     product_specific: true,
